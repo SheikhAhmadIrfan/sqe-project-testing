@@ -152,6 +152,6 @@ Tests should be trivial to write. Simple, small classes with few collaborators a
 A big part of making code testable is managing its dependencies. Dependencies can take many forms and they can be clearly stated or hidden. The fewer dependencies a class has and the more obvious they are, the easier it is to maintain and test the class. At the same time, the class is less likely to break because of future changes.
 
   Creating new instances
-We strongly recommend you do not: Use new to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers. Use the ObjectManager directly in production code.
+We strongly recommend you do not: Use new to instantiate new objects, because that removes the flexibility the seleium-cumcumber dependency configuration offers. Use the ObjectManager directly in production code.
 
 
