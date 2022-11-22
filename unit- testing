@@ -1,0 +1,54 @@
+metabase uses javascript language for its front end development
+first of all i open the metabase documentation
+then i went to the frontend folder
+then i selected select test folder  (https://github.com/metabase/metabase/tree/master/frontend/test)
+then i selected metabase folder inside select folder (https://github.com/metabase/metabase/tree/master/frontend/test/metabase)
+then i selected lib folder'
+then i selected unit test (https://github.com/metabase/metabase/tree/master/frontend/test/metabase/lib)
+the test has name of validate.unit.spec.js
+
+it has 2 test cases
+
+
+TEST 1
+
+it("should return an error if the value is null", () => {
+      expect(validators.required()(null)).toBe("required");
+    });
+   it means it should return error if its value is null
+   
+it("should return an error if the value is undefined", () => {
+      expect(validators.required()(null)).toBe("required");
+    });   
+    it means it should return undefined in case of error
+    
+it("should return an error if the value is an empty string", () => {
+      expect(validators.required()("")).toBe("required");
+    });
+    it means to return an error in case of empty string
+    
+xit("should return an error if the value is a number", () => {
+      expect(validators.required()(0)).toBeFalsy();
+     and the last one is should return an error if the value is a number
+     
+     
+     
+     
+ Test case 2
+ 
+ it("should return chainable validators that returns the first error by default", () => {
+    expect(validate.required().email()()).toBe("required");
+    expect(validate.required().email()("asdf")).toBe(
+      "must be a valid email address",
+    );
+  });
+  
+  it means that it should return chainable validators that will return the first error by default
+  
+  describe("all", () => {
+    expect(validate.required().email().all()()).toEqual([
+      "required",
+      "must be a valid email address",
+    ]);
+    
+    it means that it should accept the required entries like email etc
