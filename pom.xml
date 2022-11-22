@@ -1,17 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
- ahmad
+
+  <groupId>Api_test</groupId>
+  <artifactId>Api_test</artifactId>
+
   <groupId>RestAssuredProject</groupId>
   <artifactId>RestAssuredProject</artifactId>
 
   <groupId>Java</groupId>
   <artifactId>CucumberJava</artifactId>
- main
+
   <version>0.0.1-SNAPSHOT</version>
   
   <dependencies>
   
- ahmad
+
   
 <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 <dependency>
@@ -45,7 +48,9 @@
   <scope>test</scope>
 </dependency>
   
-=======
+
+  </dependencies>
+ 
   <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 <dependency>
     <groupId>io.cucumber</groupId>
@@ -77,7 +82,8 @@
 </dependency>
   
     
- main
+
   </dependencies>
+
   
 </project>
