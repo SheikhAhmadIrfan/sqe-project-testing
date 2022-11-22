@@ -1,0 +1,50 @@
+**Introduction to UI components**
+User Interface is the visual part of a software application that obviously determines how a user interacts with an application, or a website, and how information is displayed on the screen.
+Of course,  UI contains, for example, buttons, menus, text fields and all other controls those users interact with when using an application
+Therefore, UI tests are scripts that verify an application as the end-user would.
+Indeed they mimic actions, such as clicking on a control, entering text, scrolling a page and so on, by also checking that the software does what it should of course.
+So, UI tests are so powerful because they go end to end, from the UI layer down.
+End-to-end means testing all the different parts of an application from the beginning (the user interface) to the end (the underlying services, the database connectivity, etc.).
+Briefly, what makes UI tests so good is that they walk through all the layers of the application being tested, ensuring for key application workflows that everything is indeed hooked up and behaves as expected.
+
+**We choose Java Cumcumber BDD**
+
+**Cucumber** is a widely used tool for Behaviour Driven Development because it provides an easily understandable testing script for system acceptance and automation testing.
+
+**BDD (Behavioral Driven Development)**_ is a software development approach that was developed from Test Driven Development (TDD).
+BDD includes test case development on the basis of the behavior of software functionalities. All test cases are written in the form of simple English statements inside a feature file, which is human-generated. Acceptance test case statements are entirely focused on user actions.
+
+*XML Declaration* XML is widely used in which allows developers to easily reuse existing functionalities and add customizations. Compared to XML layouts, UI components use a more semantical approach to declare and configure the user interface. An instance of a UI component is usually based on the hierarchy of child UI components. For example:
+
+
+JAVA class The code below shows how the Java class of a UI component is implemented.
+
+	WebDriver driver = null;
+	Login webLogin;
+	Setting webSetting;
+	Password password;
+	@Given("browser is open")
+	
+	public void browser_is_open() throws InterruptedException {
+		String projectPath=System.getProperty("user.dir");
+	    System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/driver/chromedriver.exe");
+	    driver=new ChromeDriver();
+	    driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+	    driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+	    Thread.sleep(4000);
+	}
+	@When("user enters email and password")
+	public void user_enters_email_and_password() throws InterruptedException {
+	   webLogin = new Login (driver);
+	   webLogin.enterusername();
+	   webLogin.enterpassword();
+	   Thread.sleep(4000);
+	}
+	
+	@And("user clicks signin")
+	public void user_clicks_signin() throws InterruptedException {
+		webLogin.user_clicks_signin();
+		Thread.sleep(4000);
+    }
+    
+    
